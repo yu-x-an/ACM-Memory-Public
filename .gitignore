@@ -1,0 +1,25 @@
+/node_modules/
+.tmp*/
+*.db
+*.db-wal
+*.db-shm
+*.log
+memory.html
+
+# Local credentials and user data (never commit)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+.DS_Store
+coverage/
+.nyc_output/
+*.local
