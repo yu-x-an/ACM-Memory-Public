@@ -34,9 +34,10 @@ const EXPECTED = 'create,accept,renew,return,reject,accept,return,verify'
 {
   const { status, report, stderr } = run()
   ok('the loop exits 0', status === 0, `exit ${status} ${String(stderr).slice(-300)}`)
-  ok('and reports itself as ok', report?.ok === true, JSON.stringify(report?.failed ?? report).slice(0, 200))
+  ok('and reports itself as ok', report?.ok === true,
+    JSON.stringify(report?.failed ?? report).slice(0, 200) + ` | stderr: ${JSON.stringify(report?.workerStderr ?? [])}`.slice(0, 600))
   ok('every step passed', report?.steps?.length > 0 && report.steps.every((s) => s.ok),
-    (report?.steps ?? []).filter((s) => !s.ok).map((s) => s.name).join('; '))
+    (report?.steps ?? []).filter((s) => !s.ok).map((s) => `${s.name} -> ${String(s.detail ?? '').slice(0, 200)}`).join('; '))
   ok('the trail is create -> assign -> accept -> renew -> return -> reject -> accept -> return -> verify',
     report?.trail?.join(',') === EXPECTED, report?.trail?.join(','))
   ok('a caller with no grant was refused inside the run',

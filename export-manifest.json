@@ -1,7 +1,7 @@
 {
-  "exportId": "328b1b6385be",
+  "exportId": "b9cdf8f11a7e",
   "tool": 2,
-  "createdAt": "2026-10-28T23:30:01.429Z",
+  "createdAt": "2026-10-28T23:36:49.340Z",
   "note": "Public manifest. It carries file hashes and an export id only: the private source commit is recorded on the private side, deliberately.",
   "files": {
     ".gitattributes": "00f6c5b11ab5745a870edfd48d96d6ff6678d345d93cfde1e1df49abaa8299cc",
@@ -124,6 +124,6 @@
     "test/semantic.mjs": "7ba2810b64994ea17216a2051c52140a0fbd2c8db1a55cf60e7c87e2ed39b7fa",
     "test/smoke.mjs": "470d3a65a154ffafc7b791f0e5e51a85dd8ed32ee8cf75015999cec968cec52b",
     "test/tasks.mjs": "586faa1142eff261f88f27ae6b9fe934f5ffbf85ab1c0563fa64d8be24f4b13f",
-    "test/two-agent-loop.mjs": "9897dd3b40186d984995a119d9234bf90068180b9b882c10877d814784d091c7"
+    "test/two-agent-loop.mjs": "1b31e5d7c6d56673f6e383aef22fccedb2d249d4a77596d9301d3665bbde8a03"
   }
 }
