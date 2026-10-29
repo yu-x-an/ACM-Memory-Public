@@ -1,7 +1,7 @@
 {
   "exportId": "e4a214438feb",
   "tool": 2,
-  "createdAt": "2026-10-29T00:08:47.867Z",
+  "createdAt": "2026-10-29T00:25:20.753Z",
   "note": "Public manifest. It carries file hashes and an export id only: the private source commit is recorded on the private side, deliberately.",
   "files": {
     ".gitattributes": "00f6c5b11ab5745a870edfd48d96d6ff6678d345d93cfde1e1df49abaa8299cc",
