@@ -1,7 +1,7 @@
 {
-  "exportId": "5f9782e5c8fa",
+  "exportId": "ccbced6499a8",
   "tool": 2,
-  "createdAt": "2026-10-29T03:58:37.464Z",
+  "createdAt": "2026-10-29T05:33:36.554Z",
   "note": "Public manifest. It carries file hashes and an export id only: the private source commit is recorded on the private side, deliberately.",
   "files": {
     ".gitattributes": "07b93b4f86f8746c5cb71f13eb50ad0a6c7bdd3a7fbe42c9047fda8db3beace5",
@@ -20,7 +20,7 @@
     "lib/backup.mjs": "cb0c8565998ab5a48b56bcd08039c4c7ae29af7134ac69c1c96d7e55abe453ce",
     "lib/checkpoint.mjs": "834f4e7dc1652bcd7f620720732ed0496cf494d2b5063647d6051e5575846d2f",
     "lib/core.mjs": "7b653dd84b27ab97a3e2f39415ff84328f7a0473b9c1aeff712af6c2610e7241",
-    "lib/db.mjs": "0aac5e5a3a9243bd99295fe4b595f37621c5a59b0d21a9c634aa536c664c5ea3",
+    "lib/db.mjs": "baa963b2a2caf8a2ec37755a6278ff4a1408ce21867b0c741f1a14487e2e5d37",
     "lib/deliberation.mjs": "bfe411e34d8a3dadc3bb5fc59171549dac1c3caf11111532d6ec4df2e0815350",
     "lib/distill.mjs": "d4f9d60ca1dbd23b1c0ee58d2efebd8ef7d2e940b1dd381f87224e484f8eae0d",
     "lib/embed.mjs": "c549a5777214eb823255480087ac700137305181d25458fadf129fbda362248b",
