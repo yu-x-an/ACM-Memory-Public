@@ -1,3 +1,12 @@
+# Checkout must not rewrite the bytes the export pinned.
+#
+# The mirror verifies itself with SHA-256 over the working tree, and a Windows
+# checkout with `core.autocrlf=true` turns every LF into CRLF - so a clone of a
+# correct tree failed verification, and `git checkout -- .` was enough to make a
+# correct file fail. `eol=lf` keeps the shipped bytes on every platform; the rules
+# below stay more specific and win where binary or precision content is involved.
+* text=auto eol=lf
+
 # Binary and precision assets must not be re-encoded on checkout.
 # Line-ending conversion changes the bytes of the tokenizer file, which is
 # pinned by SHA-256 in THIRD_PARTY_NOTICES.md.

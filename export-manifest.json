@@ -1,10 +1,10 @@
 {
-  "exportId": "e4a214438feb",
+  "exportId": "71ae7753de80",
   "tool": 2,
-  "createdAt": "2026-10-29T00:25:20.753Z",
+  "createdAt": "2026-10-29T00:47:24.833Z",
   "note": "Public manifest. It carries file hashes and an export id only: the private source commit is recorded on the private side, deliberately.",
   "files": {
-    ".gitattributes": "00f6c5b11ab5745a870edfd48d96d6ff6678d345d93cfde1e1df49abaa8299cc",
+    ".gitattributes": "07b93b4f86f8746c5cb71f13eb50ad0a6c7bdd3a7fbe42c9047fda8db3beace5",
     ".github/workflows/ci.yml": "dfdbef6d63ff9ef86c972a81d22cc189cb799ad085b5ad030abe0accc603c243",
     ".gitignore": "4222b7703ea8c4b9c2d017fd4defb6be95ee6734c512c0e9c9bdae44a8896d68",
     "LICENSE": "2a95d542f97fd0076cb45c99f073ab054bc565802fc6b40a162081b9bd780954",
