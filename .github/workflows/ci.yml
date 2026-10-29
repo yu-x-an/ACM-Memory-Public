@@ -1,0 +1,40 @@
+name: CI
+
+# The mirror's workflow. It runs the same suite as the development repository, minus
+# the two checks that need historical material this repository does not carry: the
+# tree here has one commit and no audit baseline, and copying those checks over would
+# be theatre. `npm run test:all` is that subset here, and it ends with
+# `verify-export.mjs --require`, which re-hashes every file against
+# `export-manifest.json` so a file that rode along fails the build.
+#
+# Six legs on purpose: a public repository's standard runners are free, so this is
+# the only place the full Linux/Windows/macOS x Node 22/24 matrix can run every time.
+# It runs on push and on demand, so there is no second "full" workflow to drift.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: ${{ matrix.os }} / node ${{ matrix.node }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ['ubuntu-latest', 'macos-latest', 'windows-latest']
+        node: ['22', '24']
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Test suite
+        run: npm run test:all
+        env:
+          NODE_OPTIONS: ${{ matrix.node == '22' && '--experimental-sqlite' || '' }}

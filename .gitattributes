@@ -1,0 +1,6 @@
+# Binary and precision assets must not be re-encoded on checkout.
+# Line-ending conversion changes the bytes of the tokenizer file, which is
+# pinned by SHA-256 in THIRD_PARTY_NOTICES.md.
+*.onnx binary
+*.wasm binary
+*.txt -text

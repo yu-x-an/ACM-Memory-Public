@@ -1,0 +1,68 @@
+{
+  "name": "dsh-acm-memory",
+  "version": "1.0.0-rc.2",
+  "description": "Local-first persistent memory, agent messaging and task continuity for compatible AI hosts",
+  "type": "module",
+  "main": "lib/index.mjs",
+  "exports": {
+    ".": "./lib/index.mjs",
+    "./sdk": "./lib/sdk.mjs"
+  },
+  "bin": {
+    "acm": "lib/host/cli.mjs",
+    "acm-mcp": "lib/host/mcp.mjs"
+  },
+  "files": [
+    "lib",
+    "docs/INSTALL.md",
+    "docs/API.md",
+    "docs/LIMITS.md",
+    "README.md",
+    "SECURITY.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "dsh.bundle.yml"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {},
+  "dsh": {
+    "bundle": {
+      "patch": "./dsh.bundle.yml"
+    }
+  },
+  "scripts": {
+    "test": "node test/run.mjs",
+    "test:security": "node test/security.mjs",
+    "test:all": "node scripts/check-syntax.mjs && node scripts/check-repository-language.mjs && node scripts/check-doc-links.mjs && node scripts/check-third-party.mjs && node scripts/check-package.mjs --profile=public && node scripts/check-api.mjs && node scripts/check-secrets.mjs && node test/check-secrets.mjs && node test/backup.mjs && node test/run.mjs && node test/distill.mjs && node test/gaps.mjs && node test/redact.mjs && node test/semantic.mjs && node test/smoke.mjs && node test/host-drill.mjs && node test/lifecycle-faults.mjs && node test/drill-guard.mjs && node test/principal-id.mjs && node test/tasks.mjs && node test/auth.mjs && node test/sdk-task.mjs && node test/hosts.mjs && node test/two-agent-loop.mjs && node test/extras.mjs && node test/evolve.mjs && node test/load.mjs && node test/migration.mjs && node test/governance.mjs && node test/retrieval.mjs && node test/handoff.mjs && node test/immunity.mjs && node test/recovery.mjs && node test/deliberation.mjs && node test/restore.mjs && node test/hostile.mjs && node test/cross-platform.mjs && node test/extraction.mjs && node test/mailbox.mjs && node test/security.mjs && node test/package-public-sync.mjs && node scripts/verify-export.mjs --require",
+    "test:public": "node scripts/check-syntax.mjs && node scripts/check-repository-language.mjs && node scripts/check-doc-links.mjs && node scripts/check-third-party.mjs && node scripts/check-package.mjs --profile=public && node scripts/check-api.mjs && node scripts/check-secrets.mjs && node test/check-secrets.mjs && node test/backup.mjs && node test/run.mjs && node test/distill.mjs && node test/gaps.mjs && node test/redact.mjs && node test/semantic.mjs && node test/smoke.mjs && node test/host-drill.mjs && node test/lifecycle-faults.mjs && node test/drill-guard.mjs && node test/principal-id.mjs && node test/tasks.mjs && node test/auth.mjs && node test/sdk-task.mjs && node test/hosts.mjs && node test/two-agent-loop.mjs && node test/extras.mjs && node test/evolve.mjs && node test/load.mjs && node test/migration.mjs && node test/governance.mjs && node test/retrieval.mjs && node test/handoff.mjs && node test/immunity.mjs && node test/recovery.mjs && node test/deliberation.mjs && node test/restore.mjs && node test/hostile.mjs && node test/cross-platform.mjs && node test/extraction.mjs && node test/mailbox.mjs && node test/security.mjs && node test/package-public-sync.mjs && node scripts/verify-export.mjs --require",
+    "test:repo-language": "node scripts/check-repository-language.mjs",
+    "test:docs": "node scripts/check-doc-links.mjs",
+    "test:third-party": "node scripts/check-third-party.mjs",
+    "test:package": "node scripts/check-package.mjs --profile=public",
+    "test:api": "node scripts/check-api.mjs",
+    "test:secrets": "node scripts/check-secrets.mjs",
+    "test:host": "node test/host-drill.mjs",
+    "test:faults": "node test/lifecycle-faults.mjs",
+    "test:drill": "node test/drill-guard.mjs",
+    "test:task": "node test/tasks.mjs",
+    "test:principal": "node test/principal-id.mjs",
+    "test:loop": "node scripts/two-agent-loop.mjs --crash",
+    "test:auth": "node test/auth.mjs",
+    "test:sdk-task": "node test/sdk-task.mjs",
+    "api:update": "node scripts/check-api.mjs --update",
+    "test:migration": "node test/migration.mjs",
+    "test:governance": "node test/governance.mjs",
+    "test:retrieval": "node test/retrieval.mjs",
+    "test:handoff": "node test/handoff.mjs",
+    "test:immunity": "node test/immunity.mjs",
+    "test:recovery": "node test/recovery.mjs",
+    "test:deliberation": "node test/deliberation.mjs",
+    "test:restore": "node test/restore.mjs",
+    "test:hostile": "node test/hostile.mjs",
+    "test:portability": "node test/cross-platform.mjs",
+    "test:extraction": "node test/extraction.mjs",
+    "test:mailbox": "node test/mailbox.mjs"
+  }
+}

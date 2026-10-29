@@ -1,0 +1,16 @@
+# ACM Memory as a profile layer.
+#
+# Declared through package.json `dsh.bundle`, so `dsh plugin add` installs this
+# package as a bundle instead of a plain dependency and the plugin is mounted at
+# boot. Without this the plugin only loads through a hand-written insert patch,
+# which happens after the host has already created its agent - and a host that
+# freezes its tool list at agent creation then never sees these tools.
+#
+# Configuration is deliberately absent: the operator's own profile patch targets
+# `id: acm-memory` and supplies dbPath, owner, http and the rest. This layer only
+# guarantees that the plugin is in the tree.
+
+- insert:
+    - id: acm-memory
+      name: dsh-acm-memory
+      inject: [systemPrompt, agents, timer, tools, llm]
