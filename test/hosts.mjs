@@ -2,7 +2,7 @@
 // \u90FD\u4E0D\u4F9D\u8D56 DSH\uFF0C\u8DD1\u7684\u662F\u540C\u4E00\u5957 core\u3002
 
 import { spawnSync } from 'node:child_process'
-import { mkdtempSync, rmSync, writeFileSync, readFileSync } from 'node:fs'
+import { mkdtempSync, rmSync, writeFileSync, readFileSync, existsSync, mkdirSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -85,6 +85,22 @@ ok('cli fold \u5199\u6587\u4EF6', (() => {
 const factsFile = join(dir, 'facts.json')
 writeFileSync(factsFile, JSON.stringify([{ text: 'whale-girl lives in the sea', confidence: 0.9, kind: 'fact' }]), 'utf8')
 ok('cli ingest \u628A\u5916\u90E8 JSON \u5199\u8FDB\u5E93', cli(['ingest', '--file', factsFile]).includes('\u5199\u8FDB 1 \u6761'))
+
+// CLI-01: `--help` must print usage and must not open, create or migrate a store.
+// Before the fix, `--help` was consumed as a flag, `args._` was empty, the command
+// defaulted to `inject`, and `env()` had already opened and migrated the default
+// database - a real store moved from schema 18 to 19 this way. The disposable home
+// is what keeps this assertion honest: without it the test would be about the
+// operator's own store instead of a path nobody else can reach.
+const helpHome = join(dir, 'home-cli01')
+mkdirSync(helpHome, { recursive: true })
+const helpEnv = { ...process.env, USERPROFILE: helpHome, HOME: helpHome }
+delete helpEnv.ACM_DB
+delete helpEnv.ACM_SESSION
+const helpRun = spawnSync(process.execPath, [cliPath, '--help'], { env: helpEnv, encoding: 'utf8' })
+ok('cli --help prints usage', helpRun.status === 0 && /acm inject/.test(helpRun.stdout ?? ''), (helpRun.stdout || helpRun.stderr || '').slice(0, 80))
+ok('cli --help opens no store', !existsSync(join(helpHome, '.dsh', 'acm-memory', 'memory.db')))
+ok('cli help and --help print the same text', (helpRun.stdout ?? '').trim() === cli(['help']).trim())
 
 // ── MCP
 const res = mcp([

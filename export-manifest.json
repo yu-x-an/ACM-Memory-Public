@@ -1,7 +1,7 @@
 {
-  "exportId": "71ae7753de80",
+  "exportId": "5f9782e5c8fa",
   "tool": 2,
-  "createdAt": "2026-10-29T00:47:24.833Z",
+  "createdAt": "2026-10-29T03:58:37.464Z",
   "note": "Public manifest. It carries file hashes and an export id only: the private source commit is recorded on the private side, deliberately.",
   "files": {
     ".gitattributes": "07b93b4f86f8746c5cb71f13eb50ad0a6c7bdd3a7fbe42c9047fda8db3beace5",
@@ -28,7 +28,7 @@
     "lib/fold.mjs": "776e39e3c95ee32dc88c620d21b4380e98d85e54179c940fd965fe533e32cd8b",
     "lib/graph.mjs": "50831bd5ed1d94709c8b0e7f61091f3be4acfdc7043cb9e8efab052e52e4082e",
     "lib/handoff.mjs": "17472fbd5bae2104e033833c7db71a3593eaa76f608915928f859a3d4fd585d5",
-    "lib/host/cli.mjs": "2b379b5cffaaa23b61ac8519ad2d36dafa13f669443ce0e5bab9b2dbbadf1cf8",
+    "lib/host/cli.mjs": "dcd81fc8a90ead50f688af565528ac62f7256c74bd960e5d83fdf40904926489",
     "lib/host/mcp.mjs": "e787dcff0729217892f7fc48789ea652a254eed5291e5da370d6518fe55ba75c",
     "lib/hostdeps.mjs": "f0efabcaef161251ba0ac2220834e7ebeab56fa1fc216ed4741c746a49fa0583",
     "lib/index.mjs": "7c4f4e4a45c173ff75bab404821129a59b4778ad84395f6049ded7de8ebb4c9d",
@@ -106,7 +106,7 @@
     "test/host-drill-child.mjs": "98be28814fecc82fa2ac5a7d6b49d6fcf9132bad2a69e38b795d82519bd618f7",
     "test/host-drill.mjs": "e3027769f24479778254de0961cc1f14fcb58e318a9a3cd486e46fd767e459eb",
     "test/hostile.mjs": "a74ec51181f55208ae31c2f5da7b605c068abf6b8ba88801f328b2b4eaef3794",
-    "test/hosts.mjs": "7b9fd0a10ac357dd4317f21186374755ca3e04fa06dd22dd3cc7144c39d8f4f4",
+    "test/hosts.mjs": "c7be169b4a609375839af4ff6442db39ff6289abcb386d9a246de7dcf34323b3",
     "test/immunity.mjs": "2deb302d57043a735010720a9f72668cb2021b3e89bb2efd05654723e09a1836",
     "test/lifecycle-faults.mjs": "1f2f71ec58e26a5f36ff6cc5750e5f028a1ec1df36c0efade88e921d863bc5b0",
     "test/load.mjs": "90c86bd81faed33d9c26aa9922663a2950bd52437979230609bd8384b737d8ca",
